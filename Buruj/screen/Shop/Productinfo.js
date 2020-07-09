@@ -9,7 +9,8 @@ import {
   ListHeaderComponent,
   ListFooterComponent,
 } from "react-native";
-//import {addCart} from '../../components/Api/CartApi'; for future implementation
+import * as firebase from "firebase";
+import database from '@react-native-firebase/database';
 import {Header,Card,Button,Icon } from 'react-native-elements';
 import BackgroundCarousel from '../../components/BackgroundCarousel';
 import styles from '../../Styles/ProductInfoStyle';
@@ -79,12 +80,48 @@ const ProductDetail = ({route,navigation}) => {
     }
 
   const AddtoCart = () => {
-    (Color == 0 ) ? alert('Please choose a color ') : 
+    if(firebase.auth().currentUser){
+
+    (Color == 0 ) ? alert('Please choose a color ') : (
     //alert('You buy ' + data.name + ' with a quantity of ' + Quantity + ' with color: ' + Color);
     //navigation.navigate(`Cart`) ;
-     navigation.navigate(`Cart`, {data : data ,color:Color , image:Image, quantity:Quantity}) ;
+    //newPostKey = app.database().ref().child('OrderId').push().key;
+    
+    firebase.database().ref('CartList/' + firebase.auth().currentUser.displayName).push({
+        name:data.name,
+        price:data.price,
+        color:Color,
+        image:Image,
+        quantity:Quantity
+      }).then((data) => {
+        console.log('order has been submitted')
+        
+      }).catch((error) => {
+        console.log('error', error)
+      })
+     ,navigation.navigate(`Cart`))
+
+    }else{
+      alert('Please Login to continue')
+    }
   };
 
+  /*
+   const newReference = database()
+  .ref('/users')
+  .push();
+
+console.log('Auto generated key: ', newReference.key);
+
+newReference
+  .set({
+    age: 32,
+  })
+  .then(() => console.log('Data updated.'));
+
+      
+  */
+  
     return (
 
       <View style={styles.containerImage}>

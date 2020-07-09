@@ -32,6 +32,7 @@ const SignUpScreen = ({navigation}) => {
                   console.log(user);
                   navigation.navigate('Login');
                   Alert.alert( 'User account registered' );
+                  
                   //this.setState({condSucc: true},); //Successfully sign up
             })
            .catch(error => {

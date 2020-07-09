@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "699094579301",
+    "firebase_url": "https://buruj-store-29a31.firebaseio.com",
+    "project_id": "buruj-store-29a31",
+    "storage_bucket": "buruj-store-29a31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699094579301:android:b8eb736e962bb86ae4ae8c",
+        "android_client_info": {
+          "package_name": "com.anilist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699094579301-km3bssn01g9oih9v6sce52vu5nhej4dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6rotXOfQG0TlAz0MQ-687j3diRLNC_TI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699094579301-km3bssn01g9oih9v6sce52vu5nhej4dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

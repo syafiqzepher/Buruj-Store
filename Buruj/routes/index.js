@@ -189,7 +189,7 @@ const ShopNavigator = () => (
             <Button
               icon={<Icon name='shopping-cart' color='#ffffff' />}
               buttonStyle={{backgroundColor:'#141414'}}
-              onPress={() => navigation.navigate('Cart', {data : 0, color:0 , quantity:0})}
+              onPress={() => navigation.navigate('Cart')}
               title=""
               color="#fff"
             />
