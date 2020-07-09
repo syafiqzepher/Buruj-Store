@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: '#45105E',
         padding: 7,
-        width: '100%',
+        width: '60%',
         borderRadius: 3
       },
     buttonSignOut: {
@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
       textContainer: {
         marginHorizontal: 60,
         marginTop: 5,
+        justifyContent:'center',
+        width:'70%'
       },
       titleNew: {
         marginTop: 10,

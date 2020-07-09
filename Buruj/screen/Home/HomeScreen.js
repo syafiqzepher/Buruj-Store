@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Text,View,TouchableOpacity,StyleSheet,Image,StatusBar,ScrollView} from "react-native";
-import {Icon}from 'react-native-elements';
 import BackgroundCarousel from '../../components/BackgroundCarousel';
 import Video from 'react-native-video';
 import { SliderBox } from "react-native-image-slider-box";
@@ -11,6 +10,8 @@ const images = [
   "https://gdurl.com/PogZ",
   "https://gdurl.com/KphH"
 ];
+
+
 
 export default class HomeScreen extends Component {
   

@@ -69,12 +69,6 @@ export default class NewsScreen extends Component{
           </View>
         </View>
         </View>
-        <View style={{alignItems: 'center', marginBottom: 30}}>
-        <TouchableOpacity style={styles.button}// onPress={() => this.props.navigation.navigate('BurujQibla')}
-        >
-          <Text style={styles.buttonText}>GET PROMO NOW</Text>
-        </TouchableOpacity>
-        </View>
         </View>
       </ScrollView>
     );

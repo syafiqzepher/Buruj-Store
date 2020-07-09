@@ -6,6 +6,7 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Alert,
   ListHeaderComponent,
   ListFooterComponent,
 } from "react-native";
@@ -82,7 +83,10 @@ const ProductDetail = ({route,navigation}) => {
   const AddtoCart = () => {
     if(firebase.auth().currentUser){
 
-    (Color == 0 ) ? alert('Please choose a color ') : (
+    (Color == 0 ) ? Alert.alert(
+      "",
+      "Please choose a color",
+    ) : (
     //alert('You buy ' + data.name + ' with a quantity of ' + Quantity + ' with color: ' + Color);
     //navigation.navigate(`Cart`) ;
     //newPostKey = app.database().ref().child('OrderId').push().key;
@@ -102,26 +106,13 @@ const ProductDetail = ({route,navigation}) => {
      ,navigation.navigate(`Cart`))
 
     }else{
-      alert('Please Login to continue')
+      Alert.alert(
+        "",
+        "Please login to continue",
+      ) 
     }
   };
 
-  /*
-   const newReference = database()
-  .ref('/users')
-  .push();
-
-console.log('Auto generated key: ', newReference.key);
-
-newReference
-  .set({
-    age: 32,
-  })
-  .then(() => console.log('Data updated.'));
-
-      
-  */
-  
     return (
 
       <View style={styles.containerImage}>

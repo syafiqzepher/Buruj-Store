@@ -12,11 +12,11 @@ import {
 } from "react-native";
 import * as firebase from "firebase";
 import styles from '../../Styles/ProfileStyle';
-import { BaseRouter } from '@react-navigation/core';
+import {changePassword} from '../../CRUD/CRUD';
 
-const ProductList = ({navigation}) => {
-  const [username, setUsername] = useState('');
-  const [pass, setPass] =useState('');
+const ProfileScreen = ({navigation}) => {
+  const [currPass, setCurrPass] = useState('');
+  const [newPass, setNewPass] =useState('');
   const [User,setUser] =useState('0');
   const [count,setCount] = useState('0');
   const [hidden1, setHidden1] = useState(true);
@@ -24,7 +24,7 @@ const ProductList = ({navigation}) => {
 
 
   
-const SignOut = () => {
+  const SignOut = () => {
     firebase
         .auth()
         .signOut()
@@ -53,8 +53,41 @@ const SignOut = () => {
           console.log(error)
           Alert.alert('Status', error.toString(error));
         });
-  }  
+    }  
   
+  const UpdatePass = () =>{
+    if(currPass){
+      if(newPass){
+        changePassword(currPass,newPass);
+      }
+      else{
+        Alert.alert(
+          "",
+          "Nothing to update",
+          [
+            { text: "OK", onPress: () =>  console.log("Nothing updated") }
+          ],
+        );
+      } 
+    }
+    else{
+      Alert.alert(
+        "",
+        "Password Changed",
+        [
+          { text: "OK", onPress: () =>  console.log("Password Changed") }
+        ],
+      );
+    }
+  }
+
+  const onInputLabelPressedCurr = () => {
+    setHidden1(!hidden1);
+  }
+const onInputLabelPressedNew = () => {
+    setHidden2(!hidden2);
+  }
+
   if(!firebase.auth().currentUser){
     return (
 
@@ -68,7 +101,7 @@ const SignOut = () => {
                   style={{width: 128, height: 128}} />
               </View>
             </View>
-    <Text style={{textAlign:'center', fontWeight: 'bold' ,fontSize: 24, marginTop: 12,}}>Guest Mode</Text>
+    <Text style={{textAlign:'center', fontWeight: 'bold' ,fontSize: 24, marginTop: 12}}>Guest Mode</Text>
             <View style={{alignItems:'center'}}>
             <View style = {styles.buttonContainer}>
           <Button color="#45105E"
@@ -100,31 +133,49 @@ const SignOut = () => {
             {//Update New Password 
             }
           <View style={styles.textContainer}>
-
           <Text style={styles.titleNew}> YOUR CURRENT PASSWORD</Text>  
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          
           <TextInput
           placeholder=" "
-          value={username}
+          value={currPass}
+          secureTextEntry={hidden1}
           autoCapitalize="none"
           autoCorrect={false}
-          onChangeText={(nextValue) => setUsername(nextValue)}
+          onChangeText={(nextValue) => setCurrPass(nextValue)}
           style={styles.input}
           />
-
+          <TouchableOpacity onPress={onInputLabelPressedCurr} style={{ marginLeft: -70, width:'20%'}}>
+          <Text style={{textAlign:'right', fontSize:12, color: '#909497'}}>
+                {hidden1 ? 'Show' : 'Hide'}
+          </Text>
+          </TouchableOpacity>
+          </View>
+          
           <Text style={styles.titleNew}> YOUR NEW PASSWORD</Text>  
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TextInput
-          placeholder=""
-          value={pass}
+          placeholder=" "
+          value={newPass}
+          secureTextEntry={hidden2}
           autoCapitalize="none"
           autoCorrect={false}
-          onChangeText={(nextValue) => setPass(nextValue)}
+          onChangeText={(nextValue) => setNewPass(nextValue)}
           style={styles.input}
           />
+          <TouchableOpacity onPress={onInputLabelPressedNew} style={{marginLeft: -70, width:'20%'}}>
+          <Text style={{textAlign:'right', fontSize:12, color: '#909497'}}>
+                {hidden2 ? 'Show' : 'Hide'}
+          </Text>
+          </TouchableOpacity>
+          </View>
 
-          <View style={{alignItems:'center'}}>
+          
+          </View>
+          <View style={{alignItems:'center' , width:'70%'}}>
               <TouchableOpacity 
               style={styles.button}
-              //onPress={this.update}
+              onPress={UpdatePass}
               >
                 <Text style={{color:'white', fontWeight:'bold'}}>UPDATE</Text>
               </TouchableOpacity>
@@ -135,8 +186,6 @@ const SignOut = () => {
                 <Text style={{color:'white', fontWeight:'bold'}}>SIGN OUT</Text>
               </TouchableOpacity>
               </View>
-          </View>
- 
             </View>
             
           </View>
@@ -144,8 +193,12 @@ const SignOut = () => {
       </View>
   )
   }
-
-  
   };
 
-export default ProductList;
+    
+
+  
+
+  
+
+export default ProfileScreen;

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {app} from './fbconfig';
-import {CurrentUser} from '../Login/Login';
 import * as firebase from "firebase";
 import { Alert } from 'react-native';
 

@@ -37,112 +37,121 @@ const HomeNavigator = () => (
       <HomeNav.Screen
         name="Home"
         component={HomeScreen}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Home',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
         
       />
       <HomeNav.Screen
         name="NewsScreen"
         component={NewsScreen}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: '',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <HomeNav.Screen
         name="News2Screen"
         component={News2Screen}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: '',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <HomeNav.Screen
         name="News3Screen"
         component={News3Screen}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
+        options={({ navigation }) => ({
+          title: '',
+          headerStyle: {
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
+          },
+          headerTintColor: '#EBF2FA',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+              color: '#ffdc00',
+              textAlign: "center",
+              fontWeight: 'normal',
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
           ),
+        })}
+      />
+      <HomeNav.Screen
+        
+        name="Cart"
+        component={Cart}
+        options={{
           headerStyle: {
               backgroundColor: '#141414',
               elevation: 0,
@@ -153,12 +162,9 @@ const HomeNavigator = () => (
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
-              fontWeight: 'normal',
           }
         }}
-        
       />
-
     </HomeNav.Navigator>
 );
 
@@ -172,7 +178,7 @@ const ShopNavigator = () => (
         component={ShopList}
 
         options={({ navigation }) => ({
-          title: 'Home',
+          title: 'Shop',
           headerStyle: {
             backgroundColor: '#141414',
             elevation: 0,
@@ -200,22 +206,30 @@ const ShopNavigator = () => (
         
         name="Detail"
         component={Detail}
-        options={{
-          tabBarVisible: false,
-          //headerRight:() => ( <ShoppingCartIcon/> ),
+        options={({ navigation }) => ({
+          title: '',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
+              fontWeight: 'normal',
           },
-          
-        }}
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <ShopNav.Screen
         
@@ -247,236 +261,233 @@ const TutorialNavigator = () => (
       <TutorialNav.Screen
         name="Tutorial"
         component={tutorial}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial2"
         component={tutorial2}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial3"
         component={tutorial3}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial4"
         component={tutorial4}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial5"
         component={tutorial5}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial6"
         component={tutorial6}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial7"
         component={tutorial7}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
-          ),
+        options={({ navigation }) => ({
+          title: 'Tutorial',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <TutorialNav.Screen
         name="Tutorial8"
         component={tutorial8}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-      />
+        options={({ navigation }) => ({
+          title: 'Tutorial',
+          headerStyle: {
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
+          },
+          headerTintColor: '#EBF2FA',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+              color: '#ffdc00',
+              textAlign: "center",
+              fontWeight: 'normal',
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
           ),
+        })}
+      />
+      <TutorialNav.Screen
+        
+        name="Cart"
+        component={Cart}
+        options={{
+          //headerRight:() => ( <ShoppingCartIcon/> ),
           headerStyle: {
               backgroundColor: '#141414',
               elevation: 0,
@@ -487,12 +498,9 @@ const TutorialNavigator = () => (
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
-              fontWeight: 'normal',
           }
         }}
-        
       />
-
     </TutorialNav.Navigator>
 );
 
@@ -503,34 +511,30 @@ const ProfileNavigator = () => (
       <ProfileNav.Screen
         name="Profile"
         component={Profile}
-        options={{
-
-          headerRight:() => ( 
-          //<ShoppingCartIcon/> 
-          //<Icon name='shopping-cart' type='entypo'  color='white' size={20} style={{marginRight:10}}/>
-          <Button
-          icon={<Icon name='shopping-cart' color='#ffffff' />}
-          buttonStyle={{backgroundColor:'#141414'}}
-          //onPress={() => {navigation.navigate(`Cart`)}}
-        title=""
-        color="#fff"
-          />
-          ),
-          
+        options={({ navigation }) => ({
+          title: 'Profile',
           headerStyle: {
-              backgroundColor: '#141414',
-              elevation: 0,
-              shadowOpacity: 0
+            backgroundColor: '#141414',
+            elevation: 0,
+            shadowOpacity: 0
           },
-          headerTintColor: 'white',
+          headerTintColor: '#EBF2FA',
           headerTitleAlign: 'center',
           headerTitleStyle: {
               color: '#ffdc00',
               textAlign: "center",
               fontWeight: 'normal',
-          }
-        }}
-        
+          },
+          headerRight: () => (
+            <Button
+              icon={<Icon name='shopping-cart' color='#ffffff' />}
+              buttonStyle={{backgroundColor:'#141414'}}
+              onPress={() => navigation.navigate('Cart')}
+              title=""
+              color="#fff"
+            />
+          ),
+        })}
       />
       <ProfileNav.Screen
         
@@ -632,8 +636,6 @@ export default function App() {
      return <Icon name={iconName}  type='ionicon' size={size} color={color}     />;
        },
 
-
-
        
     })}
 tabBarOptions={{
@@ -645,10 +647,39 @@ tabBarOptions={{
     },
     }}
   >
-        <Tab.Screen name="Home" component={HomeNavigator} />
-        <Tab.Screen name="Shop" component= {ShopNavigator}  />
-        <Tab.Screen name="Tutorial"  component={TutorialNavigator}/>
-        <Tab.Screen name="Profile"  component={ProfileNavigator} />
+       
+        <Tab.Screen
+          name="Home"
+          component={HomeNavigator}
+          options={({ route }) => ({
+            tabBarLabel: 'Home',
+            tabBarVisible: route.state && route.state.index === 0
+          })}
+        />
+        <Tab.Screen
+          name="Shop"
+          component={ShopNavigator}
+          options={({ route }) => ({
+            tabBarLabel: 'Shop',
+            tabBarVisible: route.state && route.state.index === 0
+          })}
+        />
+        <Tab.Screen
+          name="Tutorial"
+          component={TutorialNavigator}
+          options={({ route }) => ({
+            tabBarLabel: 'Tutorial',
+            tabBarVisible: route.state && route.state.index === 0
+          })}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileNavigator}
+          options={({ route }) => ({
+            tabBarLabel: 'Profile',
+            tabBarVisible: route.state && route.state.index === 0
+          })}
+        />
         
       </Tab.Navigator>
     </NavigationContainer>
