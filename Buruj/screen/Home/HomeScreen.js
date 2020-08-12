@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Text,View,TouchableOpacity,StyleSheet,Image,StatusBar,ScrollView} from "react-native";
+import {Icon}from 'react-native-elements';
 import BackgroundCarousel from '../../components/BackgroundCarousel';
 import Video from 'react-native-video';
 import { SliderBox } from "react-native-image-slider-box";
@@ -10,8 +11,6 @@ const images = [
   "https://gdurl.com/PogZ",
   "https://gdurl.com/KphH"
 ];
-
-
 
 export default class HomeScreen extends Component {
   
@@ -70,7 +69,7 @@ export default class HomeScreen extends Component {
 
           <Video
                 ref={(ref) => {this.video = ref}}     
-                source={{uri: 'https://gdurl.com/C_jgJ'}}
+                source={{uri: 'https://gdurl.com/8Z9x'}}
                 repeat={this.state.repeat}
                 rate={this.state.rate}
                 volume={this.state.volume}
@@ -91,9 +90,11 @@ export default class HomeScreen extends Component {
         <View style={{marginTop: 10, marginBottom: 25,}}>
         <View>
         <Text style={{fontWeight: 'bold', fontSize: 35, textAlign: 'center', marginVertical: 20}}>BURUJ'S FUNCTIONS</Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Tutorial')}>
         <Image
         source={{uri: 'https://gdurl.com/auap'}}
         style={{width: "100%", height: 370, resizeMode: 'center', marginBottom: 25,}}/>
+        </TouchableOpacity>
         </View>
         
         <View style={{marginLeft: -215}}>
@@ -118,7 +119,7 @@ export default class HomeScreen extends Component {
         source={{uri: 'https://gdurl.com/AT2bw'}}
         style={styles.iconFx}/>
         <View style={{marginHorizontal: -115,}}></View>
-        <Text style={styles.textfx}>Set Name Your Name</Text>
+        <Text style={styles.textfx}>Set Your Name</Text>
         </View>
         
         <View style={styles.groupfx}>
@@ -196,8 +197,6 @@ export default class HomeScreen extends Component {
 
         <SliderBox
         images={this.state.images}
-        // sliderBoxHeight={}
-        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
         dotColor="#ffdc00"
         inactiveDotColor="#90A4AE"
         dotStyle={{
@@ -210,9 +209,7 @@ export default class HomeScreen extends Component {
         paginationBoxVerticalPadding={20}
         autoplay
         circleLoop
-        // resizeMethod={'resize'}
-        resizeMode={'cover'}
-        ImageComponentStyle={{width: '100%', height: 500, resizeMode: 'center',}}
+        ImageComponentStyle={{width: '100%', height: 410, resizeMode: 'cover',}}
         />
 
         <View style={{marginTop: 50}}></View>

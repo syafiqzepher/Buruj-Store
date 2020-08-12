@@ -45,7 +45,7 @@ export default class BackgroundCarousel extends React.Component {
         const {images} =this.props
         const {selectedIndex} = this.state
         return(
-            <View style={{height: 400,width:"100%"}}>
+            <View style={{height: 250,width:"100%"}}>
                 <ScrollView 
                 horizontal 
                 pagingEnabled 

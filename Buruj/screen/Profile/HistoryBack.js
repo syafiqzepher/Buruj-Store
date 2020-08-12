@@ -13,7 +13,7 @@ import database from '@react-native-firebase/database';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from '../../Styles/CartStyle';
 
-const ProductList = ({route,navigation}) => {
+const HistoryScreen = ({route,navigation}) => {
 
     const [cartItem,setCartitem]= useState();
     const [orderKey,setOrderkey] = useState();
@@ -47,34 +47,6 @@ const ProductList = ({route,navigation}) => {
       }
     }
     
-    const DeleteItem = () => {
-      Alert.alert(
-        '',
-        'Do you want to delete this item?',
-        [
-          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-          {text: 'OK', onPress: () => 
-           { 
-            database()
-            .ref('Cartlist/' + firebase.auth().currentUser.displayName)
-            .remove()
-            .then(function() {
-               console.log("Remove succeeded.")
-             })
-             .catch(function(error) {
-               console.log("Remove failed: " + error.message)
-             });
-          }
-          }
-        ],
-        { cancelable: false }
-      );
-    }
-
-    const calctotalPrice = (price,quantity) => {
-      setSubTotal((price * quantity));
-      
-    }
 
 
     useEffect(()=>{
@@ -90,7 +62,6 @@ const ProductList = ({route,navigation}) => {
     <View style={[styles.itemContainer, { backgroundColor: 'white', borderRadius: 5,borderColor: 'lightgrey',borderWidth:1}]}>
       <View style={[{flex:1 , flexDirection:'row' }]}>
         <TouchableOpacity style={[{flex:1 , flexDirection:'row' }]} 
-        onLongPress ={DeleteItem}
         >
         <Image source={{uri:item.image}}
           style={{width: 163, height: 170,}}>
@@ -101,35 +72,7 @@ const ProductList = ({route,navigation}) => {
             <Text style={styles.itemName}>Price: RM{item.price}</Text>
             {setOrderkey(item.key)}
             <Text/>
-            <Text style={styles.itemName}>Quantity :</Text>
-            
-            {/* Quantity  */}
-               <View style={{marginTop: 5,marginBottom:20,flexDirection: 'row',}}>
-
-                        <TouchableOpacity
-                        style={styles.button}
-                          //onPress={setCountMinus} 
-                          >
-                          <Icon name='minus' type='entypo' color='black' size={20}/>
-                        </TouchableOpacity>
-                    
-                    <View style={styles.countFlex}>
-                      <View style={[styles.countContainer]}>    
-                      <Text style={[styles.countText]}> {item.quantity}</Text>    
-                      </View>
-                    </View>
-
-                        <TouchableOpacity
-                        style={styles.button}
-                        //onPress={setCountPlus}
-                        >
-                          <Icon name='plus' type='entypo'color='black' size={20}/>
-                        </TouchableOpacity>
-                    
-                  </View>
-            {//setSubTotal((item.price * item.quantity))
-            }
-            {calctotalPrice(item.price,item.quantity)}
+            <Text style={styles.itemName}>Quantity : {item.quantity}</Text>
           </View>
         </TouchableOpacity>
     </View>
@@ -152,32 +95,8 @@ const ProductList = ({route,navigation}) => {
           data={cartItem}
           renderItem={renderProductItem}
           keyExtractor={item => item.id}
-          onLongPress={() => {DeleteItem(item.key)}}
         />
-        <View style={{ height:'10%',backgroundColor:'lightgrey'}}>
-          <View style={{flex:1,flexDirection:'row'}}>
-          <View style ={{width:'30%'}}>
-              
-          </View>
-  
-  
-          <View style={{flex:1,flexDirection:'row'}}> 
-          <View style ={{ backgroundColor:'lightgrey',width:'70%' , justifyContent:'center',width:'60%',}}>
-            <Text style={{ color: "grey",fontSize: 16,}} >SubTotal : <Text style={{ color: "black",fontSize: 16,}}>RM {subTotal}</Text></Text>
-          </View>
-      
-            <TouchableOpacity style ={{backgroundColor:'#16a085', width:'40%', justifyContent:'center',alignItems:'center'}}
-             onPress={()=>{navigation.navigate('Order', {key : orderKey})}}>
-               <Text style={{color:'white',fontSize:15, fontWeight:'bold'}} >Check Out</Text>
-            </TouchableOpacity>
-           
-    
-          
-          </View>
-          
-  
-          </View>
-          </View>
+ 
         </View>
       );
     }
@@ -194,4 +113,4 @@ const ProductList = ({route,navigation}) => {
     
 
 
-export default ProductList;
+export default HistoryScreen;

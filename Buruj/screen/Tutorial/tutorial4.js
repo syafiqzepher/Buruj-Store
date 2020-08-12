@@ -128,7 +128,7 @@ export default class Tutorial4Screen extends Component {
             onPress={() => this.props.navigation.replace('Tutorial7')}>
               <Text style={styles.buttonText}>Azan Safety</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}
+            <TouchableOpacity style={{alignItems: 'center',}}
            onPress={() => this.props.navigation.replace('Tutorial8')}>
              <Text style={styles.buttonText}>Set Your Country</Text>
             </TouchableOpacity>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    padding: 10,
+    padding: 12,
     fontSize: 17,
   }
 });

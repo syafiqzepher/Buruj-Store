@@ -14,7 +14,7 @@ var data = [
                    { name: 'Purple', code: '#a62e89' ,uri:"https://gdurl.com/csXQ"},
                    { name: 'Red', code: '#db2e1d', uri:"https://gdurl.com/G3O3T" },
                    { name: 'Blue', code: '#017ac2' , uri:"https://gdurl.com/sRQz"}],  
-        "price" :"250.00",
+        "price" :"175.00",
         "desc":"It comes with pack of features such as automatic Qiblat Finder, Al-Quran Bookmark, Prayer Time Reminder and many more.",
     },
     {
@@ -27,7 +27,7 @@ var data = [
                    ],
         "color" : [{ name: 'Silver', code: '#e2e2e2' ,uri:"https://gdurl.com/cQee"},
                    { name: 'Rose Gold', code: '#c07d5c',uri:"https://gdurl.com/akga" }],   
-        "price" :"330.00",
+        "price" :"279.00",
         "desc":"It comes with pack of features such as automatic Qiblat Finder, Al-Quran Bookmark, Prayer Time Reminder and many more.",
     },
     
@@ -45,7 +45,7 @@ var data = [
                    { name: 'Blue', code: '#169dd4',uri:"https://gdurl.com/mwcxx" },
                    { name: 'Black', code: '#262628',uri:"https://gdurl.com/tF7I" },
                    { name: 'White', code: '#a7a8ad' ,uri:"https://gdurl.com/s_7o"}],   
-        "price" :"249.00",
+        "price" :"175.00",
         "desc":"It comes with pack of features such as automatic Qiblat Finder, Al-Quran Bookmark, Prayer Time Reminder and many more.",
     },
 
@@ -59,7 +59,7 @@ var data = [
                    ],
         "color" : [{ name: 'Black', code: '#262628',uri:"https://gdurl.com/KIkK"},
                    { name: 'White', code: '#a7a8ad' ,uri:"https://gdurl.com/K8IU"}],    
-        "price" :"220.00",
+        "price" :"249.00",
         "desc":"It comes with pack of features such as automatic Qiblat Finder, Al-Quran Bookmark, Prayer Time Reminder and many more.",
     },
     
@@ -71,7 +71,7 @@ var data = [
             "https://gdurl.com/YwMYH",
                    ],
         "color" : [{ name: 'Gold', code: '#eed389' ,uri:"https://gdurl.com/YwMYH"}],   
-        "price" :"350.00",
+        "price" :"279.00",
         "desc":"It comes with pack of features such as automatic Qiblat Finder, Al-Quran Bookmark, Prayer Time Reminder and many more.",
     },
 

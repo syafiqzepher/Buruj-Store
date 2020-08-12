@@ -85,6 +85,9 @@ export default class Tutorial7Screen extends Component {
                 onLoad={this.onLoad}
                 onProgress={this.onProgress}
                 onEnd={this.onEnd}
+                poster="https://gdurl.com/eLmh" // uri to an image to display until the video plays
+                posterResizeMode="stretch"              // Poster resize mode. One of contain (default), cover, stretch, center, repeat
+                // posterStyles={{resizeMode: 'cover'}} 
                 style={styles.backgroundVideo}
               />
             </View>
@@ -125,7 +128,7 @@ export default class Tutorial7Screen extends Component {
             onPress={() => this.props.navigation.replace('Tutorial6')}>
               <Text style={styles.buttonText}>DST Select</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}
+            <TouchableOpacity style={{alignItems: 'center',}}
            onPress={() => this.props.navigation.replace('Tutorial8')}>
              <Text style={styles.buttonText}>Set Your Country</Text>
             </TouchableOpacity>
@@ -189,7 +192,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    padding: 10,
+    padding: 12,
     fontSize: 17,
   }
 });

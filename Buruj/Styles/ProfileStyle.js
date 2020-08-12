@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         marginTop: 60,
         backgroundColor: 'grey',
         padding: 7,
-        width: '40%',
+        width: '60%',
         borderRadius: 3
       },
       textContainer: {
@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: '#bdc3c7',
         fontSize: 10
-      }
+      },
+
   });
 
   export default styles;

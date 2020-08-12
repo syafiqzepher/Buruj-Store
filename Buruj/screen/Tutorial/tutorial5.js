@@ -85,7 +85,7 @@ export default class Tutorial5Screen extends Component {
                 onLoad={this.onLoad}
                 onProgress={this.onProgress}
                 onEnd={this.onEnd}
-                poster="https://gdurl.com/2KJO" // uri to an image to display until the video plays
+                poster="https://gdurl.com/33Nl" // uri to an image to display until the video plays
                 posterResizeMode="stretch"              // Poster resize mode. One of contain (default), cover, stretch, center, repeat
                 // posterStyles={{resizeMode: 'cover'}} 
                 style={styles.backgroundVideo}
@@ -128,7 +128,7 @@ export default class Tutorial5Screen extends Component {
             onPress={() => this.props.navigation.replace('Tutorial7')}>
               <Text style={styles.buttonText}>Azan Safety</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}
+            <TouchableOpacity style={{alignItems: 'center',}}
            onPress={() => this.props.navigation.replace('Tutorial8')}>
              <Text style={styles.buttonText}>Set Your Country</Text>
             </TouchableOpacity>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    padding: 10,
+    padding: 12,
     fontSize: 17,
   }
 });

@@ -81,6 +81,9 @@ const ProductDetail = ({route,navigation}) => {
     }
 
   const AddtoCart = () => {
+
+    let Randomkey;
+
     if(firebase.auth().currentUser){
 
     (Color == 0 ) ? Alert.alert(
@@ -90,13 +93,15 @@ const ProductDetail = ({route,navigation}) => {
     //alert('You buy ' + data.name + ' with a quantity of ' + Quantity + ' with color: ' + Color);
     //navigation.navigate(`Cart`) ;
     //newPostKey = app.database().ref().child('OrderId').push().key;
-    
-    firebase.database().ref('CartList/' + firebase.auth().currentUser.displayName).push({
+  
+    Randomkey = firebase.auth().currentUser.displayName + Math.floor(Math.random() * 100000000000000000) + 1,
+    firebase.database().ref('CartList/' + firebase.auth().currentUser.displayName + '/' + Randomkey).set({
         name:data.name,
         price:data.price,
         color:Color,
         image:Image,
-        quantity:Quantity
+        quantity:Quantity,
+        key:Randomkey,
       }).then((data) => {
         console.log('order has been submitted')
         
@@ -108,7 +113,7 @@ const ProductDetail = ({route,navigation}) => {
     }else{
       Alert.alert(
         "",
-        "Please login to continue",
+        "Please Login to Continue",
       ) 
     }
   };

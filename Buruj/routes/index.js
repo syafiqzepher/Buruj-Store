@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import { View,StyleSheet} from "react-native";
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -13,6 +13,7 @@ import News3Screen from '../screen/Home/Content/News3';
 import ShopList from '../screen/Shop/ShopScreen';
 import Detail from '../screen/Shop/Productinfo';
 import Cart from '../screen/Cart/CartScreen';
+import Order from '../screen/Cart/Order';
 //Tutorial Screen
 import tutorial from '../screen/Tutorial/tutorial';
 import tutorial2 from '../screen/Tutorial/tutorial2';
@@ -26,9 +27,11 @@ import tutorial8 from '../screen/Tutorial/tutorial8';
 import Login from '../screen/Profile/LoginScreen';
 import SignUp from '../screen/Profile/SignUpScreen';
 import Profile from '../screen/Profile/ProfileScreen';
+import History from '../screen/Profile/History';
 
 
 import {Icon, Button} from 'react-native-elements';
+
 
 //Home Screen
 const HomeNav = createStackNavigator();
@@ -165,7 +168,26 @@ const HomeNavigator = () => (
           }
         }}
       />
+      <HomeNav.Screen
+        
+        name="Order"
+        component={Order}
+        options={{
+          headerStyle: {
+              backgroundColor: '#141414',
+              elevation: 0,
+              shadowOpacity: 0
+          },
+          headerTintColor: 'white',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+              color: '#ffdc00',
+              textAlign: "center",
+          }
+        }}
+      />
     </HomeNav.Navigator>
+    
 );
 
 
@@ -580,10 +602,31 @@ const ProfileNavigator = () => (
       />
       <ProfileNav.Screen
         
+        name="History"
+        component={History}
+        options={{
+          title:'Purchase History',
+          //headerRight:() => ( <ShoppingCartIcon/> ),
+          //headerShown:false,
+          headerStyle: {
+              backgroundColor: '#141414',
+              elevation: 0,
+              shadowOpacity: 0
+          },
+          headerTintColor: 'white',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+              color: '#ffdc00',
+              textAlign: "center",
+          }
+        }}
+      />
+      <ProfileNav.Screen
+        
         name="Cart"
         component={Cart}
         options={{
-          title:'',
+          title:'Cart',
           //headerRight:() => ( <ShoppingCartIcon/> ),
           //headerShown:false,
           headerStyle: {
@@ -647,7 +690,6 @@ tabBarOptions={{
     },
     }}
   >
-       
         <Tab.Screen
           name="Home"
           component={HomeNavigator}
